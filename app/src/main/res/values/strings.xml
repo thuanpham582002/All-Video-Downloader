@@ -1,3 +1,261 @@
 <resources>
     <string name="app_name">All Video Downloader</string>
+    <string name="video_directory">Video folder</string>
+    <string name="extract_audio">Save as audio</string>
+    <string name="create_thumbnail">Save thumbnail</string>
+    <string name="settings">Settings</string>
+    <string name="download_settings_desc">General, format, custom command</string>
+    <string name="download">Download</string>
+    <string name="url_empty">The link cannot be empty</string>
+    <string name="extract_audio_summary">Download and save audio, instead of video</string>
+    <string name="create_thumbnail_summary">Save video thumbnail as a file</string>
+    <string name="yt_dlp_up_to_date">Using the latest version of yt-dlp</string>
+    <string name="yt_dlp_update_fail">Could not install the latest yt-dlp version. Please make sure you are connected to the Internet.</string>
+    <string name="fetching_info">Fetching video info…</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="download_success_msg">Download finished</string>
+    <string name="download_error_msg">Could not download file</string>
+    <string name="download_start_msg">Download \"%1$s\"</string>
+    <string name="fetch_info_error_msg">Could not fetch video info</string>
+    <string name="general_settings">General</string>
+    <string name="language">Display language</string>
+    <string name="language_settings">Set display language</string>
+    <string name="task_running">An existing download task is already running</string>
+    <string name="paste_msg">Paste URL from clipboard</string>
+    <string name="paste_fail_msg">Could not match the URL in the clipboard</string>
+    <string name="ytdlp_version">Yt-dlp version</string>
+    <string name="ytdlp_update">Click to install the latest yt-dlp version</string>
+    <string name="delete_info">Remove?</string>
+    <string name="delete_info_msg">Remove \"%1$s\" from your download history for good?
+    </string>
+    <string name="confirm">Confirm</string>
+    <string name="dismiss">Cancel</string>
+    <string name="downloads_history">Downloads</string>
+    <string name="audio">Audio</string>
+    <string name="link_copied">Link copied to clipboard</string>
+    <string name="open_url">Open link</string>
+    <string name="remove">Remove</string>
+    <string name="delete_file">Delete</string>
+    <string name="about">About</string>
+    <string name="about_page">Version, releases, credits</string>
+    <string name="back">Back</string>
+    <string name="version">Version</string>
+    <string name="release_desc">Look for changelogs and new versions</string>
+    <string name="release">Latest release</string>
+    <string name="readme_desc">Check the GitHub repository and the README</string>
+    <string name="readme" translatable="false">README</string>
+    <string name="video">Video</string>
+    <string name="checked">Checked</string>
+    <string name="credits">Credits</string>
+    <string name="credits_desc">Credits and libre software</string>
+    <string name="custom_command">Custom command</string>
+    <string name="custom_command_desc">Run yt-dlp command with custom template</string>
+    <string name="custom_command_template">Command template</string>
+    <string name="edit_custom_command_template">Edit</string>
+    <string name="start_execute">Start executing command</string>
+    <string name="advanced_settings">Advanced</string>
+    <string name="print_details">Detailed output</string>
+    <string name="print_details_desc">Print detailed messages when downloading</string>
+    <string name="display">Display</string>
+    <string name="display_settings">Dark theme, dynamic color, languages</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="follow_system">System</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="cancel">Cancel</string>
+    <string name="settings_before_download">Configure before download</string>
+    <string name="settings_before_download_desc">Configure preferences before downloading</string>
+    <string name="settings_before_download_text">Adjust this download</string>
+    <string name="error_copied">Error report copied to clipboard</string>
+    <string name="thumbnail">thumbnail</string>
+    <string name="paste">Paste</string>
+    <string name="template_example" translatable="false">--no-mtime -f \"bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] /
+        bv*+ba/b\"
+    </string>
+    <string name="yt_dlp_docs">Yt-dlp usage references</string>
+    <string name="edit_template_desc">Output path and URL will be added by the app.</string>
+    <string name="audio_format">Convert audio format</string>
+    <string name="not_convert">Unconverted</string>
+    <string name="convert_to">Convert to %1$s</string>
+    <string name="format">Format</string>
+    <string name="audio_format_desc">Audio in MP3 or M4A works on most devices</string>
+    <string name="video_quality">Video quality</string>
+    <string name="best_quality">Best quality (default)</string>
+    <string name="video_quality_desc">Limit the format quality and the file size</string>
+    <string name="not_specified">Not specified (default)</string>
+    <string name="video_format_preference">Preferred video format</string>
+    <string name="video_format_desc">Chosen format when multiple are provided</string>
+    <string name="video_format">Video format</string>
+    <string name="convert_audio">Convert</string>
+    <string name="start_download">Download</string>
+    <string name="close">Close</string>
+    <string name="close_never_show_again">Don\'t show up again</string>
+    <string name="user_guide">User guide</string>
+    <string name="open_settings">Open settings</string>
+    <string name="paste_desc">Click \"Paste\" to get video link from your clipboard.</string>
+    <string name="download_desc">Then click \"Download\" after adjusting its settings.
+    </string>
+    <string name="download_history_desc">Check and manage in-app downloads, including videos and audio files.</string>
+    <string name="check_download_settings_desc">Take a look at the download settings and make sure
+        you have the latest version of yt-dlp before using it.
+    </string>
+    <string name="download_playlist">Download playlist</string>
+    <string name="download_playlist_desc">Download multiple videos from a playlist</string>
+    <string name="defaults">Default</string>
+    <string name="channel_name">Download</string>
+    <string name="channel_description">Notify of downloaded files and progress</string>
+    <string name="video_url">Video link</string>
+    <string name="download_finish_notification">Download finished. Click to open.</string>
+    <string name="execute_command_notification">Running custom commands…</string>
+    <string name="battery_settings_desc">"Please set battery usage of this app to \"Unrestricted\" in the system settings to download in the background."
+    </string>
+    <string name="concurrent_download">Download multiple parts</string>
+    <string name="concurrent_download_desc">Download more parts of M3U8/MPD videos in parallel</string>
+    <string name="concurrent_download_num">%d thread(s) would be used to download DASH/HLS native video concurrently.</string>
+    <string name="options">Options</string>
+    <string name="additional_settings">Additional settings</string>
+    <string name="share_fail_msg">Unable to match URL from shared content</string>
+    <string name="share_success_msg">Reading video link from shared content…</string>
+    <string name="show_more_actions">Show more actions</string>
+    <string name="download_notification">Download notification</string>
+    <string name="download_notification_desc">"Notify of downloaded files and progress"</string>
+    <string name="fetching_playlist_info">Fetching playlist info…</string>
+    <string name="download_range_selection">Playlist selection</string>
+    <string name="download_range_desc">"Specify the range of videos to download from the playlist \"%3$s\" (from %1$d to %2$d)."</string>
+    <string name="from">Start</string>
+    <string name="to">End</string>
+    <string name="invalid_index_range">Invalid index range</string>
+    <string name="playlist_indicator_text">Downloading playlist (%1$d/%2$d), click to stop.</string>
+    <string name="audio_directory">Audio folder</string>
+    <string name="download_directory">Download directory</string>
+    <string name="download_directory_desc">Select where to store videos and audio files</string>
+    <string name="subdirectory">Save to subdirectory</string>
+    <string name="subdirectory_desc">Save files in folders named as respective websites</string>
+    <string name="permission_issue">Storage permission issue</string>
+    <string name="permission_issue_desc">Directories outside Download/ and Documents/ are not supported</string>
+    <string name="battery_configuration">Battery configuration</string>
+    <string name="battery_configuration_desc">Ignore battery optimization for this app to download in the background</string>
+    <string name="service_title">Seal is downloading…</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="translate">Translate</string>
+    <string name="translate_desc">Help translate this app on Hosted Weblate</string>
+    <string name="download_path_template">Path template</string>
+    <string name="custom_output_path">Custom subdirectory</string>
+    <string name="custom_output_path_desc">Use template for subdirectory</string>
+    <string name="edit_custom_path_template_desc">Specify subdirectory with available fields provided by yt-dlp</string>
+    <string name="embed_subtitles">Embed subtitles</string>
+    <string name="embed_subtitles_desc">Embed subtitles provided into videos if available</string>
+    <string name="new_template">New template</string>
+    <string name="template_label">Label</string>
+    <string name="remove_template">Remove?</string>
+    <string name="remove_template_desc">Remove \"%1$s\" from command templates for good?</string>
+    <string name="template_selection">Template selection</string>
+    <string name="custom_command_template_desc">Edit and manage command templates</string>
+    <string name="downloading_indicator_text">Download in progress, click to cancel.</string>
+    <string name="task_canceled">Download task canceled</string>
+    <string name="github_issue">GitHub issue</string>
+    <string name="github_issue_desc">Submit an issue for bug report or feature request</string>
+    <string name="info_copied">Info copied to clipboard</string>
+
+    <string name="la_nb_NO" translatable="false">Bokmål</string>
+    <string name="la_cs" translatable="false">Čeština</string>
+    <string name="la_de" translatable="false">Deutsch</string>
+    <string name="la_zh_CN" translatable="false">简体中文</string>
+    <string name="la_en_US" translatable="false">English</string>
+    <string name="la_fr" translatable="false">Français</string>
+    <string name="la_da" translatable="false">Dansk</string>
+    <string name="la_es" translatable="false">Español</string>
+    <string name="la_tr" translatable="false">Türkçe</string>
+    <string name="la_ru" translatable="false">Русский язык</string>
+    <string name="la_ar" translatable="false">عربي</string>
+    <string name="la_ua" translatable="false">Українська мова</string>
+    <string name="la_in" translatable="false">Bahasa Indonesia</string>
+    <string name="la_fa" translatable="false">فارسی</string>
+    <string name="la_fil" translatable="false">Wikang Filipino</string>
+    <string name="la_it" translatable="false">Italiano</string>
+    <string name="la_nl" translatable="false">Nederlands</string>
+    <string name="la_pt_BR" translatable="false">Português Brasileiro</string>
+    <string name="la_ja" translatable="false">日本語</string>
+    <string name="la_pl" translatable="false">Polski</string>
+    <string name="la_hu" translatable="false">"Magyar nyelv"</string>
+    <string name="la_be" translatable="false">беларуская мова</string>
+    <string name="status_enqueued">Enqueued</string>
+    <string name="status_completed">Completed</string>
+    <string name="status_downloading">Downloading</string>
+    <string name="status_canceled">Canceled</string>
+    <string name="status_fetching_video_info">Fetching info</string>
+    <string name="open_file">Open file</string>
+    <string name="restart">Restart</string>
+    <string name="status_error">Error</string>
+    <string name="copy_link">Copy link</string>
+    <string name="copy_error_report">Error report</string>
+    <string name="video_resolution">Video resolution</string>
+    <string name="video_file_size">Video file size</string>
+    <string name="la_ms" translatable="false">Bahasa Melayu</string>
+    <string name="la_zh_TW" translatable="false">繁體中文</string>
+    <string name="export_to_clipboard">Export to clipboard</string>
+    <string name="import_from_clipboard">Import from clipboard</string>
+    <string name="template_exported">Exported %1$d template(s)</string>
+    <string name="template_imported">Imported %1$d template(s)</string>
+    <string name="download_task_count">%1$d Download tasks</string>
+    <string name="recently_added">Recently Added</string>
+    <string name="multiselect_item_count">%1$d video(s), %2$d audio file(s)</string>
+    <string name="delete_multiple_items_msg">Remove %1$d item(s) from your download history for good?</string>
+    <string name="sponsorblock" translatable="false">SponsorBlock</string>
+    <string name="sponsorblock_desc">Remove segments from videos with SponsorBlock API</string>
+    <string name="sponsorblock_categories_desc">Specify SponsorBlock categories to be removed from the video file</string>
+    <string name="sponsorblock_categories">SponsorBlock categories</string>
+    <string name="check_for_updates">Check for updates</string>
+    <string name="check_for_updates_desc">Automatically check for the latest version on GitHub</string>
+    <string name="app_up_to_date">The current version is up to date</string>
+    <string name="app_update_failed">Failed to update to the latest version</string>
+    <string name="update">Update</string>
+    <string name="aria2" translatable="false">Aria2</string>
+    <string name="aria2_desc">Use aria2c as the external downloader</string>
+    <string name="cookies" translatable="false">Cookies</string>
+    <string name="cookies_desc">Use Netscape formatted cookies for downloads</string>
+    <string name="cookies_file_name" translatable="false">cookies.txt</string>
+    <string name="clear_temp_files">Clear temporary files</string>
+    <string name="clear_temp_files_desc">Delete all temporary files from the download directory</string>
+    <string name="clear_temp_files_count">Deleted %1$d temporary file(s)</string>
+    <string name="clear_temp_files_info">Temporary files can be used to resume cancelled downloads. Are you sure to delete all of these files?</string>
+    <string name="la_vi" translatable="false">Tiếng Việt</string>
+    <string name="multiselect_mode">Multiselect mode</string>
+    <string name="private_mode">Private mode</string>
+    <string name="private_mode_desc">Disable download history</string>
+    <string name="dynamic_color">Dynamic color</string>
+    <string name="dynamic_color_desc">Apply colors from wallpapers to the app theme</string>
+    <string name="la_hr" translatable="false">Hrvatski</string>
+    <string name="download_with_cellular">Download using cellular</string>
+    <string name="download_with_cellular_desc">Allow downloading media when connected to metered networks</string>
+    <string name="download_disabled_with_cellular">Downloading with cellular network is disabled according to your settings</string>
+    <string name="file_unavailable">This file is no longer available</string>
+    <string name="network">Network</string>
+    <string name="rate_limit">Rate limit</string>
+    <string name="rate_limit_desc">Limit the maximum rate for downloads</string>
+    <string name="max_rate">Maximum rate</string>
+    <string name="high_contrast">High contrast dark theme</string>
+    <string name="invalid_input">Invalid input</string>
+    <string name="lowest_quality">Lowest quality</string>
+    <string name="la_eu" translatable="false">Euskara</string>
+    <string name="la_hi" translatable="false">हिन्दी</string>
+    <string name="la_ml" translatable="false">മലയാളം</string>
+    <string name="download_queue" translatable="false">Download queue</string>
+    <string name="unavailable">Unavailable</string>
+    <string name="format_settings_desc">File format, video quality, subtitles</string>
+    <string name="general_settings_desc">Yt-dlp version, notification, playlist</string>
+    <string name="network_settings_desc">Rate limit, downloader, cookies</string>
+    <string name="disable_preview">Disable preview</string>
+    <string name="disable_preview_desc">Disable preview on downloads</string>
+    <string name="privacy">Privacy</string>
+    <string name="use_custom_command">Use custom command</string>
+    <string name="private_directory">Private directory</string>
+    <string name="private_directory_desc">Store downloads in a hidden directory</string>
+    <string name="crop_artwork">Crop artwork</string>
+    <string name="crop_artwork_desc">Crop embed image into square</string>
+    <string name="download_selection_desc">Select videos to download from the playlist \"%1$s\"</string>
+    <string name="select_all">Select all</string>
+    <string name="selected_item_count">%1$d selected</string>
+    <string name="la_si" translatable="false">සිංහල</string>
+    <string name="la_sr" translatable="false">Српски језик</string>
 </resources>

@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import kotlinx.coroutines.DelicateCoroutinesApi
 import org.jsoup.Jsoup
+import com.yausername.youtubedl_android.YoutubeDL
 
 @OptIn(ExperimentalMaterial3Api::class, DelicateCoroutinesApi::class)
 @Composable
@@ -68,8 +69,8 @@ fun WebViewScreen() {
 
                                 val html1 = html.replace("\\u003C", "<")
                                     .replace("\\u003E", ">")
-
-//                                getUrlsFromHtml(StringEscapeUtils.unescapeJava(html1))
+                                // decode
+                                getUrlsFromHtml(String(html.toByteArray(), charset("UTF-8")))
                             }
                         }
                     }
