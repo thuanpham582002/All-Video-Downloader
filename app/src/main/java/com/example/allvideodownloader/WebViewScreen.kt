@@ -1,11 +1,16 @@
 package com.example.allvideodownloader
 
+import android.R
+import android.app.AlertDialog
+import android.content.Context
 import android.graphics.Bitmap
 import android.util.Log
 import android.view.View
 import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
@@ -17,15 +22,12 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import kotlinx.coroutines.DelicateCoroutinesApi
 import org.jsoup.Jsoup
-import com.yausername.youtubedl_android.YoutubeDL
+import kotlin.math.log
+
 
 @OptIn(ExperimentalMaterial3Api::class, DelicateCoroutinesApi::class)
 @Composable
@@ -53,66 +55,85 @@ fun WebViewScreen() {
             )
         }
     ) {
-
+        val webview: WebView? = null
         AndroidView(
-            modifier = Modifier.padding(it),
+            modifier = Modifier
+                .padding(it)
+                .fillMaxSize(),
             factory = { context ->
                 WebView(context).apply {
+                    addJavascriptInterface(JavaScriptInterface(context), "HTMLOUT")
+
                     webViewClient = object : WebViewClient() {
                         override fun onPageFinished(view: WebView?, url: String?) {
                             super.onPageFinished(view, url)
-                            Log.d("WebViewScreen", "onPageFinished: $url")
-                            evaluateJavascript(
-                                "(function() { return ('<html>'+document.getElementsByTagName('html')[0].innerHTML.toString() +'</html>'); })();"
-                            ) { html ->
-                                Log.d("WebViewScreen", "onPageFinished: $html")
-
-                                val html1 = html.replace("\\u003C", "<")
-                                    .replace("\\u003E", ">")
-                                // decode
-                                getUrlsFromHtml(String(html.toByteArray(), charset("UTF-8")))
-                            }
-                        }
-                    }
-
-                    webChromeClient = object : WebChromeClient() {
-                        override fun onProgressChanged(view: WebView?, newProgress: Int) {
-                            super.onProgressChanged(view, newProgress)
-                            Log.d("WebViewScreen", "onProgressChanged: $newProgress")
+//                            Log.d("WebViewScreen", "onPageFinished: $url")
+//                            view?.loadUrl(
+//                                "javascript:window.HTMLOUT.processHTML('<head>'+document.getElementsByTagName('html')[0].innerHTML+'</head>');"
+//                            )
                         }
 
-                        override fun getVideoLoadingProgressView(): View? {
-                            return super.getVideoLoadingProgressView()
-                        }
-
-                        override fun getDefaultVideoPoster(): Bitmap? {
-                            val view = super.getDefaultVideoPoster()
-                            Log.i("WebViewScreen", "getDefaultVideoPoster: ")
-                            return view
-                        }
-                    }
-
-                    settings.javaScriptEnabled = true
-//                    GlobalScope.launch(Dispatchers.IO) {
-//                        while (true) {
-//                            Log.i("WebViewScreen", "WebViewScreen: ${view?.visibility}")
+//                        override fun shouldOverrideUrlLoading(
+//                            view: WebView?,
+//                            request: WebResourceRequest?
+//                        ): Boolean {
+//                            Log.d("WebViewScreen", "shouldOverrideUrlLoading: ${request?.url}")
+//                            view?.loadUrl(request?.url.toString())
+//                            return super.shouldOverrideUrlLoading(view, request)
 //                        }
-//                    }
+
+                        override fun onLoadResource(view: WebView?, url: String?) {
+                            super.onLoadResource(view, url)
+                            Log.d("WebViewScreen", "onLoadResource: $url")
+                        }
+
+//                        override fun doUpdateVisitedHistory(
+//                            view: WebView?,
+//                            url: String?,
+//                            isReload: Boolean
+//                        ) {
+//                            super.doUpdateVisitedHistory(view, url, isReload)
+//                        }
+                    }
+                    settings.apply {
+                        javaScriptEnabled = true
+//                        loadWithOverviewMode = true
+//                        useWideViewPort = true
+//                        allowFileAccess = true
+//                        allowContentAccess = true
+//                        domStorageEnabled = true;
+//                        loadWithOverviewMode = true
+                    }
+
                     loadUrl("https://www.youtube.com/")
                 }
             },
-//            update = { webView ->
-//            }
+            update = { webView ->
+//                webView.loadUrl("https://tiktok.com")
+            }
         )
     }
 }
 
-private fun getUrlsFromHtml(html: String): List<String> {
+class JavaScriptInterface(context: Context) {
+    private val context: Context = context
+
+    @android.webkit.JavascriptInterface
+    fun processHTML(html: String) {
+        getUrlsFromHtml(html)
+//        Log.d("WebViewScreen", "processHTML: $html")
+        AlertDialog.Builder(context).setMessage(html).setPositiveButton(R.string.ok, null)
+            .setCancelable(false).create().show()
+    }
+}
+
+private fun getUrlsFromHtml(html: String?): List<String> {
     val urls = mutableListOf<String>()
     val doc = Jsoup.parse(html)
     Log.i("WebViewScreen", "getUrlsFromHtml: $doc")
     val elements = doc.select("a[href]")
     for (element in elements) {
+        Log.i("WebViewScreen", "getUrlsFromHtml: ${element.attr("href")}")
         val url = element.attr("abs:href")
         urls.add(url)
     }
